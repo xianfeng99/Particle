@@ -6,7 +6,7 @@ import android.graphics.Point;
 
 import com.lxf.particle.effect.base.EffectItem;
 
-public class SknowPoint2 extends EffectItem{
+public class SnowPoint2 extends EffectItem{
 
 	private Paint paint = new Paint();
 	private final int size = 36; // 长度在0-50像素
@@ -15,21 +15,21 @@ public class SknowPoint2 extends EffectItem{
 	private Point point; // 雪点
 	private Point speed; // 雪点x,y方向速度
 
-	public SknowPoint2(int width, int height) {
+	public SnowPoint2(int width, int height) {
 		super(width, height);
 		point = new Point();
 		speed = new Point();
 		paint.setColor(0xffffffff);
 		reset();
 	}
-	public SknowPoint2(int width, int height, int color) {
+	public SnowPoint2(int width, int height, int color) {
 		super(width, height, color);
 		point = new Point();
 		speed = new Point();
 		paint.setColor(color);
 		reset();
 	}
-	public SknowPoint2(int width, int height, int color, boolean randColor) {
+	public SnowPoint2(int width, int height, int color, boolean randColor) {
 		super(width, height, color, randColor);
 		point = new Point();
 		speed = new Point();

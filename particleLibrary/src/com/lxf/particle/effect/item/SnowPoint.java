@@ -8,28 +8,28 @@ import android.util.Log;
 
 import com.lxf.particle.effect.base.EffectItem;
 
-public class SknowPoint extends EffectItem{
+public class SnowPoint extends EffectItem{
 
 	private Paint paint = new Paint();
 	private final int size = 36; // 长度在0-50像素
 	private Rect point; // 雪点
 	private Point speed; // 雪点x,y方向速度
 
-	public SknowPoint(int width, int height) {
+	public SnowPoint(int width, int height) {
 		super(width, height);
 		point = new Rect();
 		speed = new Point();
 		paint.setColor(0xffffffff);
 		reset();
 	}
-	public SknowPoint(int width, int height, int color) {
+	public SnowPoint(int width, int height, int color) {
 		super(width, height, color);
 		point = new Rect();
 		speed = new Point();
 		paint.setColor(color);
 		reset();
 	}
-	public SknowPoint(int width, int height, int color, boolean randColor) {
+	public SnowPoint(int width, int height, int color, boolean randColor) {
 		super(width, height, color, randColor);
 		point = new Rect();
 		speed = new Point();

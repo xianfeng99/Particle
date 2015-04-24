@@ -4,24 +4,24 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.lxf.particle.effect.base.EffectScence;
-import com.lxf.particle.effect.scene.SknowScence;
+import com.lxf.particle.effect.scene.SnowScence;
 
 /**
  * 基本雪花效果
  * @author xianfeng
  * 2015年4月23日	上午11:37:58
  */
-public class SknowAnimation extends EffectAnimation {
+public class SnowAnimation extends EffectAnimation {
 
-	public SknowAnimation(Context context, AttributeSet attrs, int defStyleAttr) {
+	public SnowAnimation(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
 	}
 
-	public SknowAnimation(Context context, AttributeSet attrs) {
+	public SnowAnimation(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
 
-	public SknowAnimation(Context context) {
+	public SnowAnimation(Context context) {
 		super(context);
 	}
 	
@@ -31,7 +31,7 @@ public class SknowAnimation extends EffectAnimation {
 		int width = getWidth();
 		int height = getHeight();
 		
-		return new SknowScence(width, height, itemNum);
+		return new SnowScence(width, height, itemNum);
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class SknowAnimation extends EffectAnimation {
 		int width = getWidth();
 		int height = getHeight();
 		
-		return new SknowScence(width, height, itemNum, itemColor);
+		return new SnowScence(width, height, itemNum, itemColor);
 	}
 
 	@Override
@@ -48,6 +48,6 @@ public class SknowAnimation extends EffectAnimation {
 		int width = getWidth();
 		int height = getHeight();
 		
-		return new SknowScence(width, height, itemNum, itemColor, randColor);
+		return new SnowScence(width, height, itemNum, itemColor, randColor);
 	}
 }

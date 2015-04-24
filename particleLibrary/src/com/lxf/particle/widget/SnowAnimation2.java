@@ -4,19 +4,19 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.lxf.particle.effect.base.EffectScence;
-import com.lxf.particle.effect.scene.Sknow2Scence;
+import com.lxf.particle.effect.scene.Snow2Scence;
 
-public class SknowAnimation2 extends EffectAnimation {
+public class SnowAnimation2 extends EffectAnimation {
 
-	public SknowAnimation2(Context context, AttributeSet attrs, int defStyleAttr) {
+	public SnowAnimation2(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
 	}
 
-	public SknowAnimation2(Context context, AttributeSet attrs) {
+	public SnowAnimation2(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
 
-	public SknowAnimation2(Context context) {
+	public SnowAnimation2(Context context) {
 		super(context);
 	}
 
@@ -25,7 +25,7 @@ public class SknowAnimation2 extends EffectAnimation {
 		int width = getWidth();
 		int height = getHeight();
 
-		return new Sknow2Scence(width, height, itemNum);
+		return new Snow2Scence(width, height, itemNum);
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class SknowAnimation2 extends EffectAnimation {
 		int width = getWidth();
 		int height = getHeight();
 
-		return new Sknow2Scence(width, height, itemNum, itemColor);
+		return new Snow2Scence(width, height, itemNum, itemColor);
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class SknowAnimation2 extends EffectAnimation {
 		int width = getWidth();
 		int height = getHeight();
 
-		return new Sknow2Scence(width, height, itemNum, itemColor, randColor);
+		return new Snow2Scence(width, height, itemNum, itemColor, randColor);
 	}
 
 }

@@ -6,7 +6,7 @@
     android:background="#ff0ba0f8"
     tools:context="com.lxf.particle.MainActivity" >
 
-    <com.lxf.particle.widget.SknowAnimation2
+    <com.lxf.particle.widget.SnowAnimation2
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/home_item_background"

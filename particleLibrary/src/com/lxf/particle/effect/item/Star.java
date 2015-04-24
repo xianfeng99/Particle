@@ -49,7 +49,7 @@ public class Star extends EffectItem{
 		reset();
 	}
 	public Star(int width, int height, int color, boolean randColor) {
-		super(width, height, color);
+		super(width, height, color, randColor);
 		point = new Point();
 		reset();
 	}
