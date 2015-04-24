@@ -16,7 +16,7 @@ import com.lxf.particle.fragment.LightFragment;
 import com.lxf.particle.fragment.MusicFragment;
 import com.lxf.particle.fragment.RainFragment;
 import com.lxf.particle.fragment.SknowFragment;
-import com.lxf.particle.fragment.StartFragment;
+import com.lxf.particle.fragment.StarFragment;
 
 public class MainActivity extends FragmentActivity {
 
@@ -39,7 +39,7 @@ public class MainActivity extends FragmentActivity {
 
 	private ArrayList<Fragment> getFragments(){
 		ArrayList<Fragment> list = new ArrayList<Fragment>();
-		list.add(new StartFragment());
+		list.add(new StarFragment());
 		list.add(new MusicFragment());
 		list.add(new RainFragment());
 		list.add(new SknowFragment());
