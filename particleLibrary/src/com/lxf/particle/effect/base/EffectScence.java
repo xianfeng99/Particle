@@ -14,6 +14,8 @@ import android.graphics.Canvas;
 public abstract class EffectScence {
 
 	protected int itemNum = 0;//效果元素数量
+	protected int itemColor = 0;//粒子颜色
+	protected boolean randColor = false;//rand color
 	//效果场景宽高
 	protected int width;
 	protected int height;
@@ -33,7 +35,36 @@ public abstract class EffectScence {
 		this.itemNum = itemNum;
 		initScence();
 	}
-	
+	/**
+	 * 效果场景构造
+	 * @param width		显示区域宽
+	 * @param height	显示区域宽
+	 * @param itemNum	显示区域元素数量
+	 * @param itemColor	元素color
+	 */
+	public EffectScence(int width, int height, int itemNum, int itemColor){
+		this.width = width;
+		this.height = height;
+		this.itemNum = itemNum;
+		this.itemColor = itemColor;
+		initScence();
+	}
+	/**
+	 * 
+	 * @param width
+	 * @param height
+	 * @param itemNum
+	 * @param itemColor
+	 * @param randColor if true,itemColor Invalid
+	 */
+	public EffectScence(int width, int height, int itemNum, int itemColor, boolean randColor){
+		this.width = width;
+		this.height = height;
+		this.itemNum = itemNum;
+		this.itemColor = itemColor;
+		this.randColor = randColor;
+		initScence();
+	}
 	/**
 	 * 效果场景构造
 	 * @param width		显示区域宽

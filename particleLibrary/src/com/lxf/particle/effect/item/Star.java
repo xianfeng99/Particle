@@ -42,7 +42,17 @@ public class Star extends EffectItem{
 		paint.setColor(0xffffffff);
 		reset();
 	}
-
+	public Star(int width, int height, int color) {
+		super(width, height, color);
+		point = new Point();
+		paint.setColor(color);
+		reset();
+	}
+	public Star(int width, int height, int color, boolean randColor) {
+		super(width, height, color);
+		point = new Point();
+		reset();
+	}
 	public void draw(Canvas canvas) {
 		// 变长小于等于８绘制圆形
 		switch (state) {
@@ -110,6 +120,9 @@ public class Star extends EffectItem{
 		point.x = rand.nextInt(width);
 		point.y = rand.nextInt(height / 2);
 		radius = rand.nextInt(size);
+		
+		randomColor();
+		paint.setColor(color);
 	}
 
 	private void drawLightStar(Canvas canvas) {

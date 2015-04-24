@@ -23,6 +23,8 @@ public abstract class EffectAnimation extends View {
 	private boolean running = false;
 	protected EffectScence scence;
 	private int itemNum;
+	private int itemColor = 0xffffffff;
+	private boolean randColor = false;
 	
 	public EffectAnimation(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
@@ -32,6 +34,8 @@ public abstract class EffectAnimation extends View {
 		super(context, attrs);
 		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.EffectAnimation);
 		itemNum = a.getInt(R.styleable.EffectAnimation_itemNum, 0);
+		itemColor = a.getColor(R.styleable.EffectAnimation_itemColor, 0xffffffff);
+		randColor = a.getBoolean(R.styleable.EffectAnimation_randColor, false);
 		a.recycle();
 	}
 
@@ -45,12 +49,29 @@ public abstract class EffectAnimation extends View {
 	 */
 	protected abstract EffectScence initScence(int itemNum);
 
+	/**
+	 * need init scence
+	 * @param itemNum
+	 * @param itemColor
+	 * @return
+	 */
+	protected abstract EffectScence initScence(int itemNum, int itemColor);
+	
+	/**
+	 * need init scence
+	 * @param itemNum
+	 * @param itemColor
+	 * @param randColor
+	 * @return
+	 */
+	protected abstract EffectScence initScence(int itemNum, int itemColor, boolean randColor);
+	
 	private void init(){
 		running = false;
 		if(itemNum == 0){
 			itemNum = 100;
 		}
-		scence = initScence(itemNum);
+		scence = initScence(itemNum, itemColor, randColor);
 		spriteThread = new Thread(run);
 		spriteThread.start();
 	}
@@ -75,16 +96,20 @@ public abstract class EffectAnimation extends View {
 	private Runnable run = new Runnable(){
 		public void run() {
 			running = true;
+			long curTime = 0;
 			while (running) {
+				curTime = System.currentTimeMillis();
 				if(scence != null){
 					scence.move();
 				}
-				
 				mHandler.sendEmptyMessage(0);
-				try {
-					Thread.sleep(30);
-				} catch (InterruptedException e) {
-					break;
+				curTime = System.currentTimeMillis() - curTime;
+				if(curTime < 30){
+					try {
+						Thread.sleep(30 - curTime);
+					} catch (InterruptedException e) {
+						break;
+					}
 				}
 			}
 

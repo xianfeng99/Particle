@@ -24,12 +24,30 @@ public class SknowAnimation extends EffectAnimation {
 	public SknowAnimation(Context context) {
 		super(context);
 	}
-
+	
 	@Override
+	@Deprecated
 	protected EffectScence initScence(int itemNum) {
 		int width = getWidth();
 		int height = getHeight();
 		
 		return new SknowScence(width, height, itemNum);
+	}
+
+	@Override
+	protected EffectScence initScence(int itemNum, int itemColor) {
+		int width = getWidth();
+		int height = getHeight();
+		
+		return new SknowScence(width, height, itemNum, itemColor);
+	}
+
+	@Override
+	protected EffectScence initScence(int itemNum, int itemColor,
+			boolean randColor) {
+		int width = getWidth();
+		int height = getHeight();
+		
+		return new SknowScence(width, height, itemNum, itemColor, randColor);
 	}
 }

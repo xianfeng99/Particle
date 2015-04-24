@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/home_item_background"
-        effect:itemNum="90" />
+        effect:itemNum="200"
+        effect:itemColor="#ff00ff00"
+        effect:randColor="true" />
 
 </RelativeLayout>

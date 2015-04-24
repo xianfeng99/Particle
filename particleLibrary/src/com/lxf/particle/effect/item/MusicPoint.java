@@ -20,6 +20,21 @@ public class MusicPoint extends EffectItem{
 		this.x = x;
 	}
 	
+	public MusicPoint(int x, int width, int height, int color){
+		this(x, width, height);
+		this.color = color;
+		paint.setColor(color);
+	}
+	public MusicPoint(int x, int width, int height, int color, boolean randColor){
+		super(width, height, color, randColor);
+		this.x = x;
+		centerY = height / 2;
+		maxH = height / 3;
+		itemSize = maxH / 15;
+		distance = itemSize / 2;
+		randomColor();
+		paint.setColor(color);
+	}
 	public MusicPoint(int width, int height) {
 		super(width, height);
 		

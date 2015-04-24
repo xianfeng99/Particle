@@ -29,4 +29,21 @@ public class MusicAnimation extends EffectAnimation {
 		return new MusicJumpScence(width, height, itemNum);
 	}
 
+	@Override
+	protected EffectScence initScence(int itemNum, int itemColor) {
+		int width = getWidth();
+		int height = getHeight();
+		
+		return new MusicJumpScence(width, height, itemNum, itemColor);
+	}
+
+	@Override
+	protected EffectScence initScence(int itemNum, int itemColor,
+			boolean randColor) {
+		int width = getWidth();
+		int height = getHeight();
+		
+		return new MusicJumpScence(width, height, itemNum, itemColor, randColor);
+	}
+
 }

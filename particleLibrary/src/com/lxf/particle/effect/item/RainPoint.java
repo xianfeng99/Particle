@@ -24,6 +24,23 @@ public class RainPoint extends EffectItem{
 		reset();
 	}
 	
+	public RainPoint(int width, int height, int color){
+		super(width, height, color);
+		point = new Rect();
+		speed = new Point();
+
+		paint.setColor(color);
+		reset();
+	}
+	
+	public RainPoint(int width, int height, int color, boolean randColor){
+		super(width, height, color, randColor);
+		point = new Rect();
+		speed = new Point();
+		reset();
+		
+	}
+	
 	public void draw(Canvas canvas){
 		canvas.drawLine(point.left, point.top, point.right, point.bottom, paint);
 	}
@@ -64,8 +81,8 @@ public class RainPoint extends EffectItem{
 		
 		speed.x = -speedX;
 		speed.y = speedY;
-		
-		paint.setColor(0x90ffffff);
+		randomColor();
+		paint.setColor(color);
 	}
 	
 	public void printPosition(){

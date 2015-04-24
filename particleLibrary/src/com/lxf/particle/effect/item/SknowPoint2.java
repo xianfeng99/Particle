@@ -22,7 +22,19 @@ public class SknowPoint2 extends EffectItem{
 		paint.setColor(0xffffffff);
 		reset();
 	}
-
+	public SknowPoint2(int width, int height, int color) {
+		super(width, height, color);
+		point = new Point();
+		speed = new Point();
+		paint.setColor(color);
+		reset();
+	}
+	public SknowPoint2(int width, int height, int color, boolean randColor) {
+		super(width, height, color, randColor);
+		point = new Point();
+		speed = new Point();
+		reset();
+	}
 	public void draw(Canvas canvas) {
 		// 变长小于等于８绘制圆形
 		if (lenSize <= 10) {
@@ -72,7 +84,8 @@ public class SknowPoint2 extends EffectItem{
 
 		speed.x = speedX;
 		speed.y = speedY;
-
+		randomColor();
+		paint.setColor(color);
 	}
 
 	private void drawSknow(Canvas canvas) {
