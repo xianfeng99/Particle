@@ -33,7 +33,7 @@ public class MusicPoint extends EffectItem{
 		itemSize = maxH / 15;
 		distance = itemSize / 2;
 		randomColor();
-		paint.setColor(color);
+		paint.setColor(this.color);
 	}
 	public MusicPoint(int width, int height) {
 		super(width, height);

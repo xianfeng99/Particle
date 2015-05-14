@@ -4,5 +4,6 @@
         <attr name="itemNum" format="integer" />
         <attr name="itemColor" format="color" />
         <attr name="randColor" format="boolean"/>
+        <attr name="clipScale" format="boolean"/>
     </declare-styleable>
 </resources>
